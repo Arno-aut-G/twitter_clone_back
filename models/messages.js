@@ -1,7 +1,7 @@
 'use-strict'
 
 module.exports = (sequelize, DataTypes) => {
-    sequelize.define('Message', {
+    const Message = sequelize.define('Message', {
         content: DataTypes.STRING,
         date: DataTypes.DATE,
         hashtags: DataTypes.STRING,
@@ -16,15 +16,13 @@ module.exports = (sequelize, DataTypes) => {
             targetKey: 'id'
         });
     };
-    Message.associate = function (models) {
-        Message.belongsToMany(models.Tag, {
-            through: "message_tag",
-            as: "tag",
-            foreignKey: "message_id"
-        });
-    };
+    // Message.associate = function (models) {
+    //     Message.belongsToMany(models.Tag, {
+    //         through: "message_tag",
+    //         as: "tag",
+    //         foreignKey: "message_id"
+    //     });
+    // };
     return Message
 }
 
-
-module.exports = Message;

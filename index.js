@@ -1,20 +1,17 @@
-require('dotenv').config()
 const express = require('express')
-const app = express()
 const cors = require('cors')
+const app = express()
 const models = require('./models')
-const { urlencoded } = require('express')
-const port = process.env.PGPORT || 3002;
+const userRouter = require('./routes/userRouter')
+const messageRouter = require('./routes/messageRouter')
+require('dotenv').config()
+const port = 3002;
 
 app.use(cors())
 app.use(express.urlencoded)
 app.use(userRouter)
-app.use(MessageRouter)
+app.use(messageRouter)
 
-
-
-
-/* ---> move this to userRouter? */
 
 
 models

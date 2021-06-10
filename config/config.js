@@ -6,20 +6,21 @@ const config = {
     "password": process.env.PGPW,
     "database": process.env.PGDB,
     "host": process.env.PGHOST,
+    "port": process.env.PGPORT,
     "dialect": "postgres"
   },
   "test": {
-    "username": process.env.PGUSER,
-    "password": process.env.PGPW,
-    "database": process.env.PGDB,
-    "host": process.env.PGHOST,
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": process.env.PGUSER,
-    "password": process.env.PGPW,
-    "database": process.env.PGDB,
-    "host": process.env.PGHOST,
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }
