@@ -8,9 +8,9 @@ const config = {
     "host": process.env.PGHOST,
     "port": process.env.PGPORT,
     "dialect": "postgres",
-    "dialectOptions": {
+    /* "dialectOptions": {
       "useUTC": true, // -->Add this line. for reading from database
-    },
+    }, */
   },
   "test": {
     "username": "root",

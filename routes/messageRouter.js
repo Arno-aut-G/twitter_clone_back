@@ -1,4 +1,3 @@
-const express = require('express')
 const messageRouter = require('express').Router()
 const models = require('../models')
 
@@ -18,8 +17,8 @@ messageRouter.post("/messages", async (req, res, next) => {
     models
         .Message
         .create(messageData)
-        .then(user => {
-            res.json({ status: `${userData.user_name} has been registred` })
+        .then(messageData => {
+            res.send(`${messageData.id} has been added`)
         })
         .catch(err => res.send(err))
 })
@@ -28,7 +27,7 @@ messageRouter.get("/messages/:id", async (req, res, next) => {
     const { id } = req.params
     models
         .Message
-        .findAll({
+        .findOne({
             where:
                 { id: id }
         })
@@ -36,7 +35,7 @@ messageRouter.get("/messages/:id", async (req, res, next) => {
             if (message) {
                 res.send(message)
             } else {
-                res.json('No such message')
+                res.send('No such message')
             }
         })
 });

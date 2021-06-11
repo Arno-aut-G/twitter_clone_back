@@ -1,8 +1,18 @@
 'use-strict'
 
+const Sequelize = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
     const Message = sequelize.define('Message', {
-        content: DataTypes.STRING,
+        id: {
+            type: DataTypes.UUID,
+            defaultValue: Sequelize.UUIDV4,
+            primaryKey: true
+        },
+        content: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         date: DataTypes.DATE,
         hashtags: DataTypes.STRING,
     }, {
