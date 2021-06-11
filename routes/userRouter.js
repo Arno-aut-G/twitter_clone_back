@@ -8,13 +8,14 @@ userRouter.get("/users", async (req, res, next) => {
 });
 
 userRouter.post("/users", async (req, res, next) => {
+    const { first_name, last_name, user_name, email, password, img } = req.body
     const userData = {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        user_name: req.body.user_name,
-        email: req.body.email,
-        password: req.body.password,
-        img: req.body.img
+        first_name: first_name,
+        last_name: last_name,
+        user_name: user_name,
+        email: email,
+        password: password,
+        img: img
     }
 
     models

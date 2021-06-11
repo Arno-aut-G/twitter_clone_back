@@ -19,5 +19,5 @@ app.get('/', (req, res, next) => {
 
 models
     .sequelize
-    .sync(/* { force: true } */)
+    .sync()
     .then(app.listen(port, console.log(`Server is running on port ${port}`)))

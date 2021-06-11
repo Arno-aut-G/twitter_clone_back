@@ -13,10 +13,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        date: DataTypes.DATE,
         hashtags: DataTypes.STRING,
     }, {
-        timestamps: false
+        timestamps: true
     })
     Message.associate = function (models) {
         // associations can be defined here

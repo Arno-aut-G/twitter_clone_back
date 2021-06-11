@@ -7,11 +7,11 @@ messageRouter.get("/messages", async (req, res, next) => {
 });
 
 messageRouter.post("/messages", async (req, res, next) => {
+    const { content, hashtags, author_id } = req.body;
     const messageData = {
-        content: req.body.content,
-        date: req.body.date,
-        hashtags: req.body.hashtags,
-        author_id: req.body.author_id
+        content: content,
+        hashtags: hashtags,
+        author_id: author_id
     }
 
     models
