@@ -7,7 +7,10 @@ const config = {
     "database": process.env.PGDB,
     "host": process.env.PGHOST,
     "port": process.env.PGPORT,
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "useUTC": true, // -->Add this line. for reading from database
+    },
   },
   "test": {
     "username": "root",
