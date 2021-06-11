@@ -4,7 +4,7 @@ const app = express()
 const models = require('./models')
 const userRouter = require('./routes/userRouter')
 const messageRouter = require('./routes/messageRouter')
-const port = 3002;
+const port = process.env.PORT || 3002;
 require('dotenv').config()
 
 
